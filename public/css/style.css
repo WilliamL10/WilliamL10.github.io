@@ -1,0 +1,401 @@
+/* * Represents everything
+	Set the box sizing on everything to border box
+		Thus, margin and padding doesn't affect the width and height of the element */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Custom property/variable in a scope */
+:root {
+	--primary-color: #2e5898;
+	--light-color: #e8f6f8;
+	--dark-color: #463e5e;
+	
+	--tab-color: #c5a1d5;
+	--tab-hcolor: #776b7c;
+	
+	--tab2-color: #e0bf71;
+	--tab2-hcolor: #bd8745;
+	
+	--tab3-color: #71e08b;
+	--tab3-hcolor: #45bd7d;
+	
+	--tab4-color: #71c8e0;
+	--tab4-hcolor: #4577bd;
+	
+	/* Maybe */
+	text-align: center;
+}
+
+
+/* Using downloaded font */
+@font-face {
+	font-family: "TWCenMTStd";
+	src: url('../fonts/TWCenMTStd.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	font-family: "TWCenMTStd", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background: #fff;		/*  white   */
+	
+	overflow-x: hidden;		/* Hide horizontal scroll bar */
+}
+
+/* For links */
+a {
+	text-decoration: none;  /* No underline */
+}
+
+/* Unordered list */
+ul {
+	list-style: none;	/* No bullet points */
+}
+
+/* For images */
+img {
+	max-width: 100%;	/* Stays contained within a div */
+}
+
+/* --------------------------------------------- */
+
+
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+
+/* --------------------------------------------- */
+	/* Footer */
+	.footerbar {
+		padding: 40px 0;
+		background: var(--dark-color);
+		color: var(--light-color);
+	}
+	
+	.footerbar h1 {
+		margin-bottom: 10px;
+	}
+	
+	.footerbar ul li {
+		font-size: 1.4rem;
+		line-height: 1.5;
+	}
+	
+	.footerbar i {
+		font-size: 1.5rem;
+		margin-right: 10px;
+	}
+	
+	/* .footer-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr 1fr;
+		gap: 30px;
+		justify-content: center;
+		align-items: center;
+	} */
+	
+	
+/* --------------------------------------------- */
+
+
+
+
+
+
+button {
+    font-family: "JetBrains Mono", Inter, system-ui, sans-serif;
+    background-color: rgba(25, 25, 28, 0.5);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}
+
+button:hover {
+    background-image: radial-gradient(
+            farthest-corner at 77% 83%,
+            rgba(1, 197, 245, 0.5) 2%,
+            rgba(1, 126, 254, 0.5) 28%,
+            rgba(25, 25, 28, 0) 70%
+    );
+    border: 1px solid rgba(76, 166, 255, 0.2);
+    background-clip: padding-box;
+}
+
+
+
+
+/* --------------------------------------------- */
+/* Utility Classes */
+	.container {
+		max-width: 1500px;
+		margin: 0 auto;		/* Put it in the middle */
+		padding: 0 15px;	/* Top/bottom # , Left/Right # */
+	}
+
+	.container-med {
+		max-width: 1200px;
+		margin: 0 auto;		/* Put it in the middle */
+		padding: 0 15px;	/* Top/bottom # , Left/Right # */
+	}
+
+	.container-sm {
+		max-width: 800px;
+		margin: 0 auto;		/* Put it in the middle */
+		padding: 0 15px;	/* Top/bottom # , Left/Right # */
+	}
+	
+/* Card */
+	.card {
+		background: #fff;
+		color: #000;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	
+/* Buttons */
+	.btn {
+		display: inline-block;
+		padding: 13px 15px;
+		background: var(--btn1-color);	/* More options compared to background-color: */
+		color: #333;					/* dark gray text color */
+		font-weight: 600;
+		text-decoration: none;
+		border: none;
+		border-radius: 10px;
+		transition: 0.5s;
+	}
+
+	.btn:hover {
+		/* background: var(--btn1-hcolor); */
+		/* opacity: 0.8; */
+		filter: brightness(80%);
+	}
+
+	.btn-primary {
+		background: var(--primary-color);
+		color: #fff;
+	}
+
+	.btn-dark {
+		background: var(--dark-color);
+		color: #fff;
+	}
+
+	.btn-block {
+		display: block;
+		width: 100%;
+	}
+
+/* Text Classes */
+	.text-xxl {
+		font-size: 3rem;		/* 3 * 16px */
+		line-height: 1.2;
+		font-weight: 600;
+		margin: 40px 0 20px;	/* 40 top, 0 left/right, 20 bottom */
+	}
+
+	.text-xl {
+		font-size: 2.2rem;
+		line-height: 1.4;
+		font-weight: normal;
+		margin: 40px 0 20px;
+	}
+
+	.text-lg {
+		font-size: 1.8rem;
+		line-height: 1.4;
+		font-weight: normal;
+		margin: 30px 0 20px;
+	}
+
+	.text-med {
+		font-size: 1.2rem;
+		line-height: 1.4;
+		font-weight: normal;
+		margin: 20px 0 10px;
+	}
+
+	.text-sm {
+		font-size: 0.9rem;
+		line-height: 1.4;
+		font-weight: normal;
+		margin: 10px 0 5px;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+	
+/* Background */
+	.bg-primary {
+		background: var(--primary-color);
+		color: #fff;
+	}
+
+	.bg-light {
+		background: var(--light-color);
+		color: #333;
+	}
+
+	.bg-dark {
+		background: var(--dark-color);
+		color: #fff;
+	}
+
+	.bg-black {
+		background: #000;
+		color: #fff;
+	}
+
+/* Hamburger Button */
+	.hamburger-button {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 10px;
+		z-index: 100;		/* Higher means on top of layer order */
+	}
+	
+	.hamburger-button .hamburger-line {
+		width: 30px;
+		height: 3px;
+		background: #333;
+		margin: 6px 0;
+	}
+
+/* Mobile Menu */
+	.mobile-menu {
+		position: fixed;
+		top: 0;
+		right: -300px;
+		width: 250px;
+		height: 100%;
+		z-index: 99;
+		background: #fff;
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+		transition: right 0.3s ease-in-out;
+	}
+	
+	.mobile-menu.active {
+		right: 0;
+	}
+	
+	.mobile-menu ul {
+		margin-top: 100px;
+		padding-right: 10px;
+	}
+	
+	.mobile-menu ul li {
+		margin: 10px 0;
+	}
+	
+	.mobile-menu ul li a {
+		font-size: 20px;
+		transition: 0.3s;
+	}
+	
+/* Media Queries */
+	@media (max-width: 960px) {
+		.text-xxl {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (max-width: 670px) {
+		.navbar .main-menu {
+			display: none;
+		}
+		
+		.navbar .hamburger-button {
+			display: block;
+		}
+		
+		.hero .container-med {
+			background: url('../images/hero-bg-mobile.png') no-repeat;
+			background-size: 350px 400px;
+			background-position: bottom;
+			height: 750px;
+		}
+		
+		/* Can write it like this */
+		.hero .hero-content,
+		.hero .hero-text {
+			width: 100%;
+			text-align: center;
+		}
+		
+		.hero .hero-buttons .btn {
+			margin-bottom: 10px;
+			display: block;
+			width: 100%;
+		}
+		
+		.video-content .youtube-video {
+			width: 80%;
+		}
+		
+		.testimonials .testimonials-heading {
+			max-width: 100%;
+			text-align: center;
+		}
+		
+		.testimonials .testimonials-grid,
+		.pricing .pricing-grid,
+		.footer .footer-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.footer .card {
+			margin-right: 0px;
+		}
+		
+		/* > : Direct div --- Parent divs */
+		.footer .footer-grid > div {
+			text-align: center;
+		}
+		
+		/* Text */
+		.text-xl {
+			font-size: 1.9rem;
+		}
+		
+		.text-lg {
+			font-size: 1.5rem;
+		}
+		
+		.text-med {
+			font-size: 1.1rem;
+		}
+		
+
+	}
+
+	@media (max-width: 500px) {
+		.text-xxl {
+			font-size: 2rem;
+		}
+	}
