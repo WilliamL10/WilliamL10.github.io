@@ -65,11 +65,60 @@ img {
 }
 
 /* --------------------------------------------- */
-
-
-
+	/* Banner */
+	.banner .container-full {
+		/* Need to change image */
+		background: url(../images/TempBackground.jpg) no-repeat;
+		background-size: cover;
+		height: 500px;
+		
+		display: flex;
+		align-items: center;
+		justify-content: right;
+	}
+	
+	.banner .banner-heading {
+		margin: 50px 300px 0 0;
+		color: var(--light-color); 
+	}
+	
 /* --------------------------------------------- */
-
+	/* Project Tabs */
+	.project-bar {
+		height: 80px;
+		background: var(--light-color);
+		
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.project-bar .menu ul {
+		display: flex;
+		font-size: 2.0rem;
+		gap: 120px;
+	}
+	
+	.project-bar .menu ul li {
+		position: relative;
+		padding: 10px 20px;
+		margin-top: 80px;
+		
+		color: var(--tab2-color);
+		font-weight: bold;
+		
+		/* Need to change image */
+		background-image: url(../images/TempBackground.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+	
+	/* Cursor Animation */
+	.project-bar li:hover {
+		
+	}
+	
+	
 /* --------------------------------------------- */
 
 /* --------------------------------------------- */
@@ -106,17 +155,16 @@ img {
 	}
 	
 	.footerbar i {
-		font-size: 1.5rem;
 		margin-right: 10px;
 	}
 	
-	/* .footer-grid {
+	.footerbar-grid {
 		display: grid;
-		grid-template-columns: 2fr 1fr 1fr 1fr;
-		gap: 30px;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
 		justify-content: center;
 		align-items: center;
-	} */
+	}
 	
 	
 /* --------------------------------------------- */
@@ -163,6 +211,12 @@ button:hover {
 
 	.container-sm {
 		max-width: 800px;
+		margin: 0 auto;		/* Put it in the middle */
+		padding: 0 15px;	/* Top/bottom # , Left/Right # */
+	}
+	
+	.container-xsm {
+		max-width: 500px;
 		margin: 0 auto;		/* Put it in the middle */
 		padding: 0 15px;	/* Top/bottom # , Left/Right # */
 	}
