@@ -69,7 +69,7 @@ img {
 /* --------------------------------------------- */
 	/* Banner */
 	.banner .container-full {
-		background: url(../images/Banner.jpg) no-repeat;
+		background: url(../images/Banner2.jpg) no-repeat;
 		background-size: cover;
 		height: 500px;
 		
@@ -80,7 +80,7 @@ img {
 	
 	.banner .banner-heading {
 		font-size: 4rem;
-		margin: 50px 100px 0 0;
+		margin: 50px 800px 0 0;
 		color: var(--light-color); 
 	}
 	
@@ -102,7 +102,7 @@ img {
 		
 		object-fit: cover;
 		
-		z-index: 4;
+		z-index: 1;
 	}
 	
 	.divider {
@@ -130,32 +130,38 @@ img {
 		color: var(--tab2-color);
 		font-size: 2rem;
 		font-weight: bold;
-		
-		z-index: 5;
 	}
 	
 	.project-tabs .tabs button:nth-child(1) {
 		background-image: url(../images/Button1.jpg);
 		background-size: cover;
 		background-position: center;
+		
+		z-index: 5;
 	}
 	
 	.project-tabs .tabs button:nth-child(2) {
 		background-image: url(../images/Button2.jpg);
 		background-size: cover;
 		background-position: center;
+		
+		z-index: 5;
 	}
 	
 	.project-tabs .tabs button:nth-child(3) {
 		background-image: url(../images/Button3.jpg);
 		background-size: cover;
 		background-position: center;
+		
+		z-index: 5;
 	}
 	
 	.project-tabs .tabs button:nth-child(4) {
 		background-image: url(../images/Button4.jpg);
 		background-size: cover;
 		background-position: center;
+		
+		z-index: 5;
 	}
 	
 	/* Cursor Animation */	
@@ -165,7 +171,7 @@ img {
 	
 	@keyframes glow {
 		0% { box-shadow: 0 0 5px #666; }
-		50% { box-shadow: 0 0 20px rgb(206, 243, 253); }
+		50% { box-shadow: 0 0 20px var(--tab2-color); }
 		100% { box-shadow: 0 0 5px #666; }
 	}
 	
@@ -180,6 +186,8 @@ img {
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.3s;
+		
+		z-index: 10;
 	}
 
 	.tab-button:hover .selector-img {
@@ -431,11 +439,11 @@ button:hover {
 /* Media Queries */
 	@media (max-width: 960px) {
 		.banner .container-full {
-			background-position: -170px center;
+			background-position: -220px center;
 		}
 		
 		.banner .banner-heading {
-			margin: 280px 160px 0 0;
+			margin: 0px 160px 0 0;
 		}
 		
 		.tab-clouds {
@@ -443,7 +451,7 @@ button:hover {
 		}
 		
 		.divider {
-			margin-top: 9px;
+			margin-top: 35px;
 		}
 		
 		.project-tabs .tabs ul {
@@ -455,18 +463,18 @@ button:hover {
 		}
 	}
 
-	@media (max-width: 670px) {
+	@media (max-width: 745px) {
 		.banner .banner-heading {
-			margin: 150px 65px 0 0;
+			margin: 0 65px 0 0;
 			font-size: 3.5rem;
 		}
 		
 		.tab-clouds {
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 		}
 		
 		.divider {
-			margin-top: 14px;
+			margin-top: 40px;
 		}
 		
 		.project-tabs {
