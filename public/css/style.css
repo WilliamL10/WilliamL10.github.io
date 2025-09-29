@@ -179,7 +179,7 @@ img {
 	
 	
 	/* Cursor Animation */	
-	.project-tabs .tabs .tab-button:hover {
+	.project-tabs .tabs .tab-button:not(.active):hover {
 		animation: glow 3s infinite alternate;
 	}
 	
@@ -223,7 +223,7 @@ img {
 		height: 50px;
 		opacity: 0;
 		pointer-events: none;
-		transition: opacity 0.1s;
+		transition: opacity 0.3s;		/* Match the transition time of selector-img */
 		
 		/* z-index: -1;		Doesn't work since its not in same container */
 	}

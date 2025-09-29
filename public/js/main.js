@@ -27,4 +27,9 @@ function setUpTabs () {
 // Call function
 document.addEventListener('DOMContentLoaded', () => {
 	setUpTabs();
+	
+	// Automatically click the first tab button without hard-coding it in HTML
+	document.querySelectorAll('.tabs').forEach(button => {
+		button.querySelector('.tab-button').click();
+	});
 });
