@@ -10,23 +10,12 @@
 
 /* Custom property/variable in a scope */
 :root {
-	/* --primary-color: #2e5898; */
-	--primary-color: rgb(71, 125, 201);
 	--light-color: rgb(238, 238, 238);
-	/* --dark-color: #463e5e; */
 	--dark-color: rgb(76, 62, 87);
+	--selected-color: rgb(143, 174, 217);
 	
-	--tab-color: #c5a1d5;
-	--tab-hcolor: #776b7c;
+	--tab-color: #e0bf71;
 	
-	--tab2-color: #e0bf71;
-	--tab2-hcolor: #bd8745;
-	
-	--tab3-color: #71e08b;
-	--tab3-hcolor: #45bd7d;
-	
-	--tab4-color: #71c8e0;
-	--tab4-hcolor: #4577bd;
 	
 	/* Maybe */
 	text-align: center;
@@ -127,7 +116,7 @@ img {
 		border: none;
 		cursor: pointer;
 		
-		color: var(--tab2-color);
+		color: var(--tab-color);
 		font-size: 2rem;
 		font-weight: bold;
 		
@@ -169,23 +158,23 @@ img {
 	
 	/* When the half-press it */
 	.project-tabs .tabs .tab-button:active {
-		color: var(--light-color);
+		color: var(--selected-color);
 	}
 	
 	/* When they confirmed the press */
 	.project-tabs .tabs .tab-button.active {
-		color: var(--light-color);
+		color: var(--selected-color);
 	}
 	
 	
 	/* Cursor Animation */	
-	.project-tabs .tabs .tab-button:hover {
+	.project-tabs .tabs .tab-button:not(.active):hover {
 		animation: glow 3s infinite alternate;
 	}
 	
 	@keyframes glow {
 		0% { box-shadow: 0 0 5px #666; }
-		50% { box-shadow: 0 0 20px var(--tab2-color); }
+		50% { box-shadow: 0 0 20px var(--tab-color); }
 		100% { box-shadow: 0 0 5px #666; }
 	}
 	
@@ -223,7 +212,7 @@ img {
 		height: 50px;
 		opacity: 0;
 		pointer-events: none;
-		transition: opacity 0.1s;
+		transition: opacity 0.3s;		/* Match the transition time of selector-img */
 		
 		/* z-index: -1;		Doesn't work since its not in same container */
 	}
@@ -267,11 +256,25 @@ img {
 	
 	.projects .card h1 {
 		font-weight: bold;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		color: #fff;
 		font-size: 1.8rem;
 	}
 	
-	.projects p {
-		font-size: 1.5rem;
+	.projects a:hover .card .text h1 {
+		color: var(--selected-color);
+	}
+	
+	/* When user clicked the link */
+	.projects a:visited .card .text h1 {
+		color: var(--selected-color);
+	}
+	
+	.projects .card p {
+		font-size: 1.2rem;
+		line-height: normal;
+		padding-left: 10px;
 	}
 	
 	
