@@ -75,12 +75,12 @@ img {
 		
 		display: flex;
 		align-items: center;
-		justify-content: right;
+		justify-content: left;
 	}
 	
 	.banner .banner-heading {
 		font-size: 4rem;
-		margin: 50px 800px 0 0;
+		margin: 50px 0 0 350px;
 		color: var(--light-color); 
 	}
 	
@@ -120,7 +120,7 @@ img {
 		gap: 50px;
 	}
 	
-	.project-tabs .tabs button {
+	.project-tabs .tabs .tab-button {
 		position: relative;
 		padding: 15px 20px;
 		
@@ -130,9 +130,11 @@ img {
 		color: var(--tab2-color);
 		font-size: 2rem;
 		font-weight: bold;
+		
+		z-index: 5;
 	}
 	
-	.project-tabs .tabs button:nth-child(1) {
+	.project-tabs .tabs .tab-button:nth-child(1) {
 		background-image: url(../images/Button1.jpg);
 		background-size: cover;
 		background-position: center;
@@ -140,7 +142,7 @@ img {
 		z-index: 5;
 	}
 	
-	.project-tabs .tabs button:nth-child(2) {
+	.project-tabs .tabs .tab-button:nth-child(2) {
 		background-image: url(../images/Button2.jpg);
 		background-size: cover;
 		background-position: center;
@@ -148,7 +150,7 @@ img {
 		z-index: 5;
 	}
 	
-	.project-tabs .tabs button:nth-child(3) {
+	.project-tabs .tabs .tab-button:nth-child(3) {
 		background-image: url(../images/Button3.jpg);
 		background-size: cover;
 		background-position: center;
@@ -156,7 +158,7 @@ img {
 		z-index: 5;
 	}
 	
-	.project-tabs .tabs button:nth-child(4) {
+	.project-tabs .tabs .tab-button:nth-child(4) {
 		background-image: url(../images/Button4.jpg);
 		background-size: cover;
 		background-position: center;
@@ -164,8 +166,20 @@ img {
 		z-index: 5;
 	}
 	
+	
+	/* When the half-press it */
+	.project-tabs .tabs .tab-button:active {
+		color: var(--light-color);
+	}
+	
+	/* When they confirmed the press */
+	.project-tabs .tabs .tab-button.active {
+		color: var(--light-color);
+	}
+	
+	
 	/* Cursor Animation */	
-	.project-tabs button:hover {
+	.project-tabs .tabs .tab-button:hover {
 		animation: glow 3s infinite alternate;
 	}
 	
@@ -189,12 +203,37 @@ img {
 		
 		z-index: 10;
 	}
-
-	.tab-button:hover .selector-img {
+	
+	
+	/* If the tab is already selected, don't play hover animation */
+	.project-tabs .tabs .tab-button:not(.active):hover .selector-img {
 		opacity: 1;
 	}
 	
-/* --------------------------------------------- */
+	
+	
+	/* Image when tab is selected */
+	.selected-img {
+		/* Position it at the bottom left corner of button */
+		position: absolute;
+		bottom: -35px;
+		left: -45px;
+		
+		
+		height: 50px;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.1s;
+		
+		/* z-index: -1;		Doesn't work since its not in same container */
+	}
+	
+	.tab-button.active .selected-img {
+		opacity: 1;
+	}
+	
+	
+	/* --------------------------------------------- */
 	/* Projects */
 	.projects {
 		padding: 40px 0;
@@ -220,6 +259,10 @@ img {
 		height: fit-content;
 		
 		text-align: left;
+	}
+	
+	.projects .card .thumbnail {
+		height: 400px;
 	}
 	
 	.projects .card h1 {
@@ -262,34 +305,6 @@ img {
 	}
 	
 	
-/* --------------------------------------------- */
-
-
-
-
-
-
-/* button {
-    font-family: "JetBrains Mono", Inter, system-ui, sans-serif;
-    background-color: rgba(25, 25, 28, 0.5);
-    cursor: pointer;
-    color: rgba(255, 255, 255, 1);
-}
-
-button:hover {
-    background-image: radial-gradient(
-            farthest-corner at 77% 83%,
-            rgba(1, 197, 245, 0.5) 2%,
-            rgba(1, 126, 254, 0.5) 28%,
-            rgba(25, 25, 28, 0) 70%
-    );
-    border: 1px solid rgba(76, 166, 255, 0.2);
-    background-clip: padding-box;
-} */
-
-
-
-
 /* --------------------------------------------- */
 /* Utility Classes */
 	.container {
@@ -383,26 +398,9 @@ button:hover {
 		color: #dcdcdc;
 	}
 	
-	.bg-black {
+	.bg-project {
 		background: #5b6081;
 		color: #fff;
-	}
-
-/* Hamburger Button */
-	.hamburger-button {
-		display: none;
-		background: none;
-		border: none;
-		cursor: pointer;
-		padding: 10px;
-		z-index: 100;		/* Higher means on top of layer order */
-	}
-	
-	.hamburger-button .hamburger-line {
-		width: 30px;
-		height: 3px;
-		background: #333;
-		margin: 6px 0;
 	}
 
 /* Mobile Menu */
@@ -437,13 +435,9 @@ button:hover {
 	}
 	
 /* Media Queries */
-	@media (max-width: 960px) {
-		.banner .container-full {
-			background-position: -220px center;
-		}
-		
+	@media (max-width: 1300px) {
 		.banner .banner-heading {
-			margin: 0px 160px 0 0;
+			margin: 50px 0 0 250px;
 		}
 		
 		.tab-clouds {
@@ -451,22 +445,33 @@ button:hover {
 		}
 		
 		.divider {
-			margin-top: 35px;
+			margin-top: 5px;
 		}
 		
-		.project-tabs .tabs ul {
-			display: inline-block;
+		.project-tabs .tabs ul .tab-button {
+			font-size: 1.8rem;
 		}
-		
-		.project-tabs .tabs ul button {
+	}
+	
+	@media (max-width: 1150px) {
+		.project-tabs .tabs ul .tab-button {
+			font-size: 1.4rem;
+		}
+	}
+	
+	@media (max-width: 1000px) {
+		.project-tabs .tabs ul .tab-button {
 			font-size: 1.2rem;
 		}
 	}
 
-	@media (max-width: 745px) {
+	@media (max-width: 900px) {
+		.banner .container-full {
+			background-position: -200px;
+		}
+		
 		.banner .banner-heading {
-			margin: 0 65px 0 0;
-			font-size: 3.5rem;
+			margin: 50px 0 0 125px;
 		}
 		
 		.tab-clouds {
@@ -487,13 +492,15 @@ button:hover {
 			gap: 20px 10px;
 		}
 		
-		.project-tabs .tabs ul button {
+		.project-tabs .tabs ul .tab-button {
 			width: 100%;
 			font-size: 1.3rem;
 		}
 	
 	}
 
-	@media (max-width: 500px) {
-		
+	@media (max-width: 550px) {
+		.banner .banner-heading {
+			margin: 50px 0 0 50px;
+		}
 	}
