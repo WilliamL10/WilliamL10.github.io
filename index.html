@@ -5,12 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>William's Portfolio</title>
 	
-	<!-- Importing font awesome  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/
-	css/all.min.css" integrity="sha512-DxV
-	+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
 	<link rel="stylesheet" href="public/css/style.css">
 	<link rel="shortcut icon" href="public/images/favicon.png" type="image/x-icon" />
 </head>
@@ -30,30 +24,32 @@
 	
 	<!-- Project Tabs -->
 	<nav class="project-tabs">
-		
 		<img src="public/images/TabClouds.png" class="tab-clouds">
 		
 		<div class="container">
-			
 			<img src="public/images/Divider.png" class="divider">
 			
 			<div class="tabs">
 				<ul>
-					<button class="tab-button" data-tab="coding">
+					<button class="tab-button active" data-for-tab="coding">
 						Coding Programs
 						<img src="public/images/SelectionAnimation.gif" class="selector-img">
+						<img src="public/images/Selected.png" class="selected-img">
 					</button>
-					<button class="tab-button" data-tab="ue5">
+					<button class="tab-button" data-for-tab="ue5">
 						UE5 Showcases
 						<img src="public/images/SelectionAnimation.gif" class="selector-img">
+						<img src="public/images/Selected.png" class="selected-img">
 					</button>
-					<button class="tab-button" data-tab="illustrations">
+					<button class="tab-button" data-for-tab="illustrations">
 						Illustrations
 						<img src="public/images/SelectionAnimation.gif" class="selector-img">
+						<img src="public/images/Selected.png" class="selected-img">
 					</button>
-					<button class="tab-button" data-tab="animations">
+					<button class="tab-button" data-for-tab="animations">
 						Animations
 						<img src="public/images/SelectionAnimation.gif" class="selector-img">
+						<img src="public/images/Selected.png" class="selected-img">
 					</button>
 				</ul>
 			</div>
@@ -61,66 +57,89 @@
 	</nav>
 	
 	<!-- Projects -->
-	<section class="projects bg-black">
+	<section class="projects bg-project">
 		<div class="container-sm">
 			
-			
-			<!-- Coding -->
-			<div class="tab-content active" id="coding">
-				<div class="projects-grid">
-					
-					<div class="card bg-gray">
-						<h1>Ignatz</h1>
-						<p>AAadaondasdna</p>
+			<div class="project-content">
+				
+				
+				<!-- Coding -->
+				<div class="tab-content active" data-tab="coding">
+					<div class="projects-grid">
+						
+						<div class="card bg-gray">
+							<div class="text">
+								<h1>Ignatz</h1>
+								<p>AAadaondasdna</p>
+							</div>
+						</div>
+						
+						<div class="card bg-gray">
+							<div class="text">
+								<h1>Ignatz</h1>
+								<p>AAadaondasdna</p>
+							</div>
+						</div>
+						
 					</div>
-					
-					
-					
 				</div>
-			</div>
-			
-			<!-- UE5 -->
-			<div class="tab-content" id="ue5">
-				<div class="projects-grid">
-					
-					<div class="card bg-gray">
-						<h1>Marianne</h1>
-						<p>AAadaondasdna</p>
+				
+				<!-- UE5 -->
+				<div class="tab-content" data-tab="ue5">
+					<div class="projects-grid">
+						
+						<div class="card bg-gray">
+							<img src="" class="thumbnail">
+							
+							<div class="text">
+								<h1>Marianne</h1>
+								<p>AAadaondasdna</p>
+							</div>
+						</div>
+						
+						
+						
 					</div>
-					
-					
-					
 				</div>
-			</div>
-			
-			<!-- Illustrations -->
-			<div class="tab-content" id="illustrations">
-				<div class="projects-grid">
-					
-					<div class="card bg-gray">
-						<h1>Claude</h1>
-						<p>AAadaondasdna</p>
+				
+				<!-- Illustrations -->
+				<div class="tab-content" data-tab="illustrations">
+					<div class="projects-grid">
+						
+						<div class="card bg-gray">
+							<img src="" class="thumbnail">
+
+							<div class="text">
+								<h1>Claude</h1>
+								<p>AAadaondasdna</p>
+							</div>
+						</div>
+						
+						
+						
 					</div>
-					
-					
-					
 				</div>
-			</div>
-			
-			<!-- Animations -->
-			<div class="tab-content" id="animations">
-				<div class="projects-grid">
-					
-					<div class="card bg-gray">
-						<h1>Hilda</h1>
-						<p>AAadaondasdna</p>
+				
+				<!-- Animations -->
+				<div class="tab-content" data-tab="animations">
+					<div class="projects-grid">
+						
+						<div class="card bg-gray">
+							<img src="" class="thumbnail">
+							
+							<div class="text">
+								<h1>Hilda</h1>
+								<p>AAadaondasdna</p>
+							</div>
+						</div>
+						
+						
+						
 					</div>
-					
-					
-					
 				</div>
+				
+				
 			</div>
-			
 			
 		</div>
 	</section>
@@ -132,7 +151,7 @@
 				
 				<div>
 					<a href="index.html">
-					<img src="public/images/favicon.png" alt="logo" width="100" height="100">
+					<img src="public/images/favicon.png" width="100" height="100">
 					</a>
 				</div>
 				
@@ -148,6 +167,6 @@
 		</div>
 	</section>
 	
-	<script type="module" src="public/src/main.ts"></script>
+	<script type="module" src="public/js/main.js"></script>
 </body>
 </html>
